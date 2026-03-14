@@ -1,0 +1,25 @@
+# Security & Tokens
+.env
+openclaw.json
+
+# OpenClaw System Folders (The "Guts")
+agents/
+cron/
+telegram/
+media/
+credentials/
+identity/
+devices/
+logs/
+canvas/
+
+# Local Session & Job Data
+sessions/
+queue/
+failed/
+completed/
+active_session.json
+
+# Python artifacts
+__pycache__/
+*.py[cod]

@@ -1,0 +1,4 @@
+playwright>=1.40.0
+asyncio>=3.4.3
+python-dotenv>=1.0.0
+openclaw>=1.2.0
