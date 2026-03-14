@@ -1,0 +1,105 @@
+
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.7"
+  },
+  "wizard": {
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/qwen3.5:9b"
+      },
+      "models": {
+        "ollama/qwen3.5:9b": {}
+      },
+      "workspace": "./workspace"
+    },
+    "list": [
+      {
+        "id": "main",
+        "tools": {
+          "alsoAllow": [
+            "read",
+            "write",
+            "exec",
+            "memory_search",
+            "memory_get",
+            "browser",
+            "canvas",
+            "image",
+            "agents_list",
+            "nodes",
+            "cron",
+            "gateway",
+            "edit",
+            "sessions_spawn",
+            "subagents"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "messaging"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "YOUR_SECURE_GATEWAY_TOKEN_HERE"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}
