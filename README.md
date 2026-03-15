@@ -2,7 +2,7 @@
 
 
 
-\*\*The open-source core of the most advanced local academic writing suite.\*\* Most "AI Humanizers" are simple cloud wrappers that charge students $30/month for a prompt that still gets flagged by Turnitin and GPTZero. I built the \*\*Ghostwriter Engine\*\* to end the subscription scam. This is a local-first, privacy-shielded behavioral engine that doesn't just "rewrite" text—it simulates the actual human writing process.
+\*\*The open-source "GhostWriter" Engine.\*\* Most "AI Humanizers" are simple cloud wrappers that charge students $30/month for a prompt that still gets flagged by Turnitin and GPTZero. I built the \*\*Ghostwriter Engine\*\* to end the subscription scam. This is a local-first, privacy-shielded agentic ai setup that, as the name suggests, automatically writes your ai generated essay in google docs providing you with a realistic looking version history.
 
 
 
@@ -48,7 +48,7 @@ Because this runs locally, your data never leaves your machine. Your essays are 
 
 
 
-\## 💻 System Requirements
+\##  System Requirements
 
 
 
@@ -56,7 +56,7 @@ This engine runs locally using the \*\*Qwen 3.5:9b\*\* model.
 
 
 
-\* \*\*GPU (Recommended):\*\* 8GB VRAM (NVIDIA RTX 3060/4060 or better) for high-speed "soulful" writing.
+\* \*\*GPU (Recommended):\*\* 8GB VRAM (NVIDIA RTX 3060/4060 or better) for high-speed writing.
 
 \* \*\*CPU/RAM (Minimum):\*\* 8GB System RAM. 
 
@@ -210,7 +210,7 @@ While I provide the core engine for free to support transparency, I also offer a
 
 
 
-> 🔗 \*\*Download Link:\*\* You can find the latest stable installer link in the \*\*"About"\*\* section (right-hand sidebar) of this GitHub repository.
+> 🔗 \*\*Download Link:\*\* https://payhip.com/b/rXuwm You can find the latest stable installer link in the \*\*"About"\*\* section (right-hand sidebar) of this GitHub repository.
 
 
 
