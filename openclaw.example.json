@@ -29,11 +29,7 @@
             "memory_get",
             "browser",
             "canvas",
-            "image",
             "agents_list",
-            "nodes",
-            "cron",
-            "gateway",
             "edit",
             "sessions_spawn",
             "subagents"
