@@ -39,23 +39,44 @@ async def ghostwriter(target_url: str, content: str, duration_minutes: float = 5
 
         print(f"🕒 Pacing initiated. Target: {duration_minutes} mins. Calculated Delay: {base_delay:.3f}s/char")
 
-        for char in content:
-            jitter = random.uniform(base_delay * 0.8, base_delay * 1.2)
+        burst_chars_left = 0
+        current_multiplier = 1.0
+
+        for i, char in enumerate(content):
+            if burst_chars_left > 0:
+                burst_chars_left -= 1
+            else:
+                if random.random() < 0.15: 
+                    burst_chars_left = random.randint(15, 60) 
+                    current_multiplier = random.uniform(0.3, 0.6) 
+                else:
+                    current_multiplier = random.uniform(0.9, 1.6) 
+
+            jitter = base_delay * current_multiplier * random.uniform(0.8, 1.2)
             
+            if char in ['.', '?', '!', ',', ';']:
+                if random.random() < 0.45: 
+                    pause_length = random.uniform(1.0, 3.5) 
+                    await asyncio.sleep(pause_length)
+                    
+            elif random.random() < 0.004: 
+                pause_length = random.uniform(2.5, 7.0)
+                await asyncio.sleep(pause_length)
+
             if char == '\n':
                 await page.keyboard.press('Enter')
-                await asyncio.sleep(jitter)
+                await asyncio.sleep(jitter + random.uniform(0.8, 2.5))
             elif char == '\t':
                 await page.keyboard.press('Tab')
                 await asyncio.sleep(jitter)
             else:
                 if random.random() < 0.005:
                     await page.keyboard.type(random.choice("asdfghjkl"))
-                    await asyncio.sleep(jitter * 2)
+                    await asyncio.sleep(jitter * 2.5) 
                     await page.keyboard.press("Backspace")
+                    await asyncio.sleep(jitter * 1.5) 
 
                 await page.keyboard.type(char)
                 await asyncio.sleep(jitter)
 
         print(f"✅ Drafting session complete.")
-        await context.close()
